@@ -13,7 +13,15 @@ export default function Home() {
         <UserList />
         <UserDetails />
         
-        <div className="h-screen bg-primary text-white w-48">Action</div>
+        <div className="h-screen bg-primary text-white w-48">
+          <h1 className=' md:text-xl lg:text-2xl p-4 underline'>
+            Actions
+          </h1>
+
+          <div  className=' md:text-lg lg:text-xl px-4  py-2 cursor-pointer' onClick={()=>{console.log('edit user detals')}}>
+                  Edit
+          </div>
+        </div>
       </div>
     </main>
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">

@@ -46,8 +46,8 @@ const UserDetails = () => {
 
   return (
     <div className="p-7 grow">
-        <div className="flex">
-        <div className='w-1/3 px-5'>
+        <div className="lg:flex">
+        <div className='md:w-full lg:w-1/4  lg:px-5'>
             <table className='table-auto border w-full '>
                 <tbody>
                 <tr>
@@ -62,7 +62,7 @@ const UserDetails = () => {
             </table>
             
         </div>
-        {userData && <div className='w-2/3'>
+        {userData && <div className='md:w-full lg:w-3/4 md:mt-5'>
             {showProfile && <div>
 
                 <table className='table border w-80 text-center'>
