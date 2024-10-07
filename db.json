@@ -1,0 +1,81 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "profile": {
+          "name": "John Doe",
+          "dob": "22/04/1995",
+          "address": "Mumbai"
+        },
+        "contacts":[
+            {
+                "id": 1,
+                "name": "Sam",
+                "number":"98993",
+                "skypeid":"https://skype.com/1221",
+                "email":"dumm1@gmail.com"
+            },
+            {
+                "id": 2,
+                "name": "Robin",
+                "number":"97824",
+                "skypeid":"https://skype.com/1231",
+                "email":"dumm2@gmail.com"
+            },
+            {
+                "id": 3,
+                "name": "Friday",
+                "number":"989977",
+                "skypeid":"https://skype.com/1291",
+                "email":"dummy3@gmail.com"
+            },
+            {
+                "id": 4,
+                "name": "David",
+                "number":"92793",
+                "skypeid":"https://skype.com/1295",
+                "email":"dummy4@gmail.com"
+            }
+        ]
+      },
+      {
+        "id": 2,
+        "profile": {
+          "name": "Mathew Stew",
+          "dob": "10/05/1997",
+          "address": "Delhi"
+        },
+        "contacts":[
+            {
+                "id": 1,
+                "name": "Samyy",
+                "number":"98793",
+                "skypeid":"https://skype.com/1231",
+                "email":"dummy5@gmail.com"
+            },
+            {
+                "id": 2,
+                "name": "Richard",
+                "number":"978114",
+                "skypeid":"https://skype.com/1391",
+                "email":"dummy6@gmail.com"
+            },
+            {
+                "id": 3,
+                "name": "Collar",
+                "number":"989967",
+                "skypeid":"https://skype.com/1299",
+                "email":"dummy7@gmail.com"
+            },
+            {
+                "id": 4,
+                "name": "Dev",
+                "number":"91393",
+                "skypeid":"https://skype.com/1296",
+                "email":"dummy8@gmail.com"
+            }
+        ]
+      }
+    ]
+}
+  
