@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { BsArrowLeft, BsFillPersonFill } from "react-icons/bs";
 import axios from 'axios'
 import { userProps } from './UserDetails';
+import { UserContext } from '@/context/UserContext';
 
 const UserList = () => {
     const [leftBarOpen, setLeftBarOpen] =useState<Boolean>(true)
 
     const [userList, setUserList] = useState<userProps[]>()
+    const {userId, setUserId} = useContext(UserContext);
 
     const fetchUserList = async()=>{
       try {
@@ -19,8 +21,11 @@ const UserList = () => {
         }
   }
 
-  useEffect(()=>{fetchUserList()},[])
-  useEffect(()=>{console.log('userList', userList)},[userList])
+  useEffect(()=>{
+    // console.log('check',userId)
+      fetchUserList()
+  },[])
+  // useEffect(()=>{console.log('userList', userList)},[userList])
 
   return (
     <div className={`h-screen bg-primary duration-300 text-white ${leftBarOpen?'w-48':'w-16'} relative p-4`}>
@@ -32,7 +37,10 @@ const UserList = () => {
               </h1>
 
               { userList?.map((item,index)=>{
-                return <div key={index} className='text-primary md:text-base lg:text-xl px-4  py-2 cursor-pointer' onClick={()=>{console.log('selected user', item.id)}}>
+                return <div key={index} className='text-primary md:text-base lg:text-xl px-4  py-2 cursor-pointer' onClick={()=>{
+                  setUserId(item.id)
+                  // console.log('selected user', item.id)
+                  }}>
                   {item.profile.name}
                 </div>
               })}

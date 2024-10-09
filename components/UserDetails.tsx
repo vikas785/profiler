@@ -1,5 +1,6 @@
-import React,{useState, useEffect}  from 'react'
+import React,{useState, useEffect, useContext}  from 'react'
 import axios from 'axios'
+import { UserContext } from '@/context/UserContext'
 
 interface profileProps {
         name: string,
@@ -25,9 +26,14 @@ const UserDetails = () => {
     const [userData,setUserData] = useState<userProps | null>(null)
     const [showProfile, setShowProfile] = useState<boolean>(true)
 
-    const fetchUserData = async()=>{
+    const {userId, setUserId} = useContext(UserContext);
+        
+
+   
+
+    const fetchUserData = async(userData:number)=>{
         try {
-            const response = await axios.get<userProps>("http://localhost:3001/users/1");  
+            const response = await axios.get<userProps>(`http://localhost:3001/users/${userId}`);  
             setUserData(response.data);
             
           } catch (error) {
@@ -39,10 +45,11 @@ const UserDetails = () => {
     }
 
     useEffect(()=>{
-        fetchUserData()
-    },[])
+        if(userId!=0)
+            fetchUserData(userId)
+    },[userId])
 
-    useEffect(()=>{console.log('userData', userData)},[userData])
+    // useEffect(()=>{console.log('userData', userData)},[userData])
 
   return (
     <div className="p-7 grow">
